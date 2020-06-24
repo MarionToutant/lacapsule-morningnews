@@ -1,0 +1,6 @@
+# Modules
+node_modules
+
+# Dotenv
+.env
+reactapp/.env
