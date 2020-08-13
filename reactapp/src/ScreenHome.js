@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Input,Button} from 'antd';
+import {Row,Col,Input,Button} from 'antd';
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -71,11 +71,13 @@ function ScreenHome(props) {
   
 
   return (
-    <div className="Login-page" >
+    <div className="Login-page">
 
+      <Row align="middle" justify="center" style={{padding: "0px"}}>
+  
           {/* SIGN-IN */}
-
-          <div className="Sign">
+          
+          <Col xs={{span: 18}} lg={{span: 9}} className="Sign">
                   
             <Input onChange={(e) => setSignInEmail(e.target.value)} className="Login-input" placeholder="email" />
 
@@ -84,26 +86,28 @@ function ScreenHome(props) {
             {tabErrorsSignin}
 
             <Button onClick={() => handleSubmitSignin()}  style={{width:'80px'}} type="primary">Sign-in</Button>
-
-          </div>
-
+          
+          </Col>
+            
+          
           {/* SIGN-UP */}
 
-          <div className="Sign">
+            <Col xs={{span: 18}} lg={{span: 9}} className="Sign">
                   
-            <Input onChange={(e) => setSignUpUsername(e.target.value)} className="Login-input" placeholder="username" />
+              <Input onChange={(e) => setSignUpUsername(e.target.value)} className="Login-input" placeholder="username" />
 
-            <Input onChange={(e) => setSignUpEmail(e.target.value)} className="Login-input" placeholder="email" />
+              <Input onChange={(e) => setSignUpEmail(e.target.value)} className="Login-input" placeholder="email" />
 
-            <Input.Password onChange={(e) => setSignUpPassword(e.target.value)} className="Login-input" placeholder="password" />
-      
-            {tabErrorsSignup}
+              <Input.Password onChange={(e) => setSignUpPassword(e.target.value)} className="Login-input" placeholder="password" />
+        
+              {tabErrorsSignup}
 
-            <Button onClick={() => handleSubmitSignup()} style={{width:'80px'}} type="primary">Sign-up</Button>
+              <Button onClick={() => handleSubmitSignup()} style={{width:'80px'}} type="primary">Sign-up</Button>
+            
+            </Col>       
 
-          </div>
-
-      </div>
+      </Row>
+    </div>
   );
 }
 

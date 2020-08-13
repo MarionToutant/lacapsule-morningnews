@@ -8,11 +8,12 @@ h4 {
 
 .Login-page{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
+
     height:100vh;
     background-image: url('/images/flat01.png');
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
